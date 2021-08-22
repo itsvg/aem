@@ -1,6 +1,5 @@
-package com.adobe.aem;
+package com.adobe.aem.controller;
 
-import com.adobe.aem.controller.RomanNumeralController;
 import com.adobe.aem.service.RomanNumeralService;
 import com.adobe.aem.util.RomanNumeralValidations;
 
