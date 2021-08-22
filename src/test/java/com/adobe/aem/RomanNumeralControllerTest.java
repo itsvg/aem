@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -54,5 +55,15 @@ public class RomanNumeralControllerTest {
 
         assertEquals(HttpStatus.OK, res.getStatusCode());
         assertEquals(expectedJson, res);
+    }
+
+    @Test
+    public void shouldReturnBadRequestResponse_forInvalidQuery() {
+
+        int num = 400;
+        doThrow(IllegalArgumentException.class).when(romanNumeralValidations).validateQueryValue(num);
+        ResponseEntity<Map<String, Object>> res = romanNumeralController.getRomanNumeral(num);
+
+        assertEquals(HttpStatus.BAD_REQUEST, res.getStatusCode());
     }
 }
