@@ -23,3 +23,20 @@ To view the running application, visit [http://localhost:8080](http://localhost:
 ```
 curl http://localhost:8080/romannumeral?query={integer}
 ```
+Or
+
+Put the url with valid integer (from 1 to 255) in the browser:
+```
+http://localhost:8080/romannumeral?query={integer}
+```
+
+For Example: 
+
+Endpoint: 
+```
+http://localhost:8080/romannumeral?query=254
+```
+output: 
+```
+{"input":"254","output":"CCLIV"}
+```

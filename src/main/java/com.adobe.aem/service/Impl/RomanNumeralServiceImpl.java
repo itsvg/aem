@@ -3,7 +3,7 @@ package com.adobe.aem.service.Impl;
 import com.adobe.aem.service.RomanNumeralService;
 import org.springframework.stereotype.Component;
 
-@Component(value = "romanNumeralServiceImpl")
+@Component
 public class RomanNumeralServiceImpl implements RomanNumeralService {
 
     /**
