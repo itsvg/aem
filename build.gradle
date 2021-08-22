@@ -1,0 +1,44 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.5'
+    id 'java'
+}
+
+version = '1.0.2'
+group = 'org.gradle.samples'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:2.4.5')
+
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest:2.5.2'
+
+    /*//testImplementation('org.mockito:mockito-all:1.10.19')
+    testImplementation ('org.springframework.boot:spring-boot-starter-test')
+    testImplementation ('junit:junit:4.11')*/
+
+    testImplementation 'io.rest-assured:rest-assured:3.3.0'
+    testImplementation 'io.rest-assured:json-schema-validator:3.0.6'
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude(group: 'junit', module: 'junit')
+    }
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testImplementation 'org.mockito:mockito-junit-jupiter:2.28.2'
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.3.1'
+}
+
+/*
+tasks.named('test', Test) {
+    useJUnitPlatform()
+}*/
